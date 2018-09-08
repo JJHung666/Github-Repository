@@ -1,3 +1,6 @@
+# Date: 9/8/2018
+# Descriptions: This program was written with a RPG in mind
+# Sources: https://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/io.html  | https://www.youtube.com/watch?v=SPZamL2Xbsc
 print("Hello, my master!")
 username = input("what is your name? Please insert to the right. ")
 print("Hello, master "+username+"!")
