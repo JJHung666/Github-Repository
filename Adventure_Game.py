@@ -98,7 +98,11 @@ def cfortune():
 	m2  =  m1  +  12  *  ((14  -  m1)  /  12)  -  2
 	d2  =  (d1  +  x  +  (31*m2)//  12)  %  7 
 
-	d3 = abs(d0-d2)
+	d3 = abs(d2+d0)
 	print(int(d3))
+
+	if d3 < 2 or d3 > 12:
+		
+
 
 fortune()
