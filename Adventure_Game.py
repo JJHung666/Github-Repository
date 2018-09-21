@@ -26,14 +26,43 @@ def afortune():
 	month = float(input("current month "))
 	day = float(input("today "))
 
-	if m = 1 and d >= 20 or m = 2 and d <= 18:
-		print("\n\nHmmm \nAn aquarius, I see")
-
-	y0  =  y  -  (14  -  m)  //  12 
-	x  =  y0  +  y0//4  -  y0//100  +  y0//400
-	m0  =  m  +  12  *  ((14  -  m)  /  12)  -  2
-	d0  =  (d  +  x  +  (31*m0)//  12)  %  7 
-#	print(int(d0))
+	if m = 1 and d >= 20 and m = 2 and d <= 18:
+		print("\n\nHmmm \nAn aquarius, I see the progress")
+#6,7
+	elif m = 2 and d >= 19 and m = 3 and d <= 20:
+		print("\n\nHmmm \n,Pisces huh. Interesting")
+#1,4
+	elif m = 3 and d >= 21 and m = 4 and d <= 19:
+		print("\n\nDaring \nAn Aries, I see possiblities")
+#2	
+	elif m = 4 and d >= 20 and m = 5 and d <= 20:
+		print("\n\nHmmm \nA Taurus, how strong and loyal")	
+#5
+	elif m = 5 and d >= 21 and m = 6 and d <= 21:
+		print("\n\nAhh \nA Gemini, quite the Cheerful one aren't you")
+#3	
+	elif m = 6 and d >= 22 and m = 7 and d <= 22:
+		print("\n\nHow Ironic \nA Cancer, insecure and unpredictable")
+#1,4
+	elif m = 7 and d >= 23 and m = 8 and d <= 22:
+		print("\n\nWow! \nA Leo, fiery and majestic")
+#7
+	elif m = 8 and d >= 23 and m = 9 and d <= 22:
+		print("\n\nHmmm \nA Virgo, diligent aren't you")
+#3
+	elif m = 9 and d >= 23 and m = 10 and d <= 23:
+		print("\n\nAhh \nA Libra, quite charming")
+#5
+	elif m = 10 and d >= 24 and m = 11 and d <= 21:
+		print("\n\nHmmm \nAn Scorpio, mysterious")	
+#2
+	elif m = 11 and d >= 22 and m = 12 and d <= 21:
+		print("\n\nHmmm \nA Sagitarius, courage and generous")
+#4
+	elif m = 12 and d >= 22 and m = 1 and d <= 19:
+		print("\n\nHmmm \na Capricorn, Determined like my creator it seems.")
+#6
+	cfortune()
 
 def nfortune():
 	print("That is a shame")
@@ -42,5 +71,7 @@ def nfortune():
 		afortune()
 	else:
 		print("Then this is where we part.")
+def cfortune():
+
 
 fortune()
