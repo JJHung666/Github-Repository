@@ -19,6 +19,7 @@ d1 = int(now.day)
 d2 = 0
 d3 = 0
 h = 0
+ho = 0
 
 
 def fortune():
@@ -39,6 +40,7 @@ def afortune():
 	global d1
 	global a
 	global h
+	global ho
 	gender = input("what gender, or other ").lower()
 	print("\n\nplease input the birthdate.")
 	y = int(input("\nyear of birth "))
@@ -84,54 +86,45 @@ def afortune():
 	if m >= 1 and d >= 20 and m <= 2 and d <= 49:
 		print("\n\nHmmm \nAn aquarius, I see the progress")
 		h = 6
-#6,7 day
+		ho = 7
 	elif m >= 2 and d >= 50 and m <= 3 and d <= 79:
 		print("\n\nHmmm \nPisces huh. Interesting")
+		ho = 1
 		h = 4
-#1,4 day
 	elif m >= 3 and d >= 80 and m <= 4 and d <= 109:
 		print("\n\nDaring \nAn Aries, I see possiblities")
 		h = 2
-#2 day
 	elif m >= 4 and d >= 110 and m <= 5 and d <= 140:
 		print("\n\nHmmm \nA Taurus, how strong and loyal")	
 		h = 5
-#5 day
 	elif m >= 5 and d >= 141 and m <= 6 and d <= 172:
 		print("\n\nAhh \nA Gemini, quite the Cheerful one aren't you")
 		h = 3
-#3 day
 	elif m >= 6 and d >= 173 and m <= 7 and d <= 203:
 		print("\n\nHow Ironic \nA Cancer, insecure and unpredictable")
 		h = 1
-#1,4 day
+		ho = 4
 	elif m >= 7 and d >= 204 and m <= 8 and d <= 234:
 		print("\n\nWow! \nA Leo, fiery and majestic")
 		h = 7
-#7 day
 	elif m >= 8 and d >= 235 and m <= 9 and d <= 265:
 		print("\n\nHmmm \nA Virgo, diligent aren't you")
 		h = 3
-#3 day
 	elif m >= 9 and d >= 266 and m <= 10 and d <= 296:
 		print("\n\nAhh \nA Libra, quite charming")
 		h = 5
-#5 day
 	elif m >= 10 and d >= 297 and m <= 11 and d <= 325:
 		print("\n\nHmmm \nAn Scorpio, mysterious")	
 		h = 2
-#2 day
 	elif m >= 11 and d >= 326 and m <= 12 and d <= 355:
 		print("\n\nHmmm \nA Sagitarius, courage and generous")
 		h = 4
-#4 day
 	elif m >= 12 and d >= 356:
 		print("\n\nHmmm \na Capricorn, Determined like my creator it seems.")
 		h = 6
 	elif m == 1 and d <= 19:
 		print("\n\nHmmm \na Capricorn, Determined like my creator it seems.")
 		h = 6
-#6 day
 	
 	cfortune()
 
@@ -188,7 +181,7 @@ def cfortune():
 
 	d3 = abs((d2+d0)-a)//2
 #	print(int(d3))
-	if d3 == h:
+	if d3 == h or d3 == ho:
 		print("\n\nit is your lucky day")
 	else:
 		print("\n\nlooks like today isn't your lucky day")
