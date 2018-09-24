@@ -1,4 +1,4 @@
-# Name: Justin Lin -- Title of game:
+# Name: Justin Lin -- Title of game: Constellation fortune
 # Date: 9/18/2018
 # Description: This is a fortune teller game, that will tell you if you're lucky today based on your birthdate and gender
 # Source: none
