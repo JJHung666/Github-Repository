@@ -23,14 +23,14 @@ for x in range(h):
 			bomb_count += 1
 			height = x-1
 			width = y -1
-			grid_size[(height-1)][(width-1)] = "1"
-			grid_size[(height-1)][(width)] = "1"
-			grid_size[(height-1)][(width+1)] = "1"
-			grid_size[(height)][(width+1)] = "1"
-			grid_size[(height)][(width-1)] = "1"
-			grid_size[(height+1)][(width-1)] = "1"
-			grid_size[(height+1)][(width)] = "1"
-			grid_size[(height+1)][(width+1)] = "1"
+			grid_size[(height-1)][(width-1)] += 1
+			grid_size[(height-1)][(width)] += 1
+			grid_size[(height-1)][(width+1)] += 1
+			grid_size[(height)][(width+1)] += 1
+			grid_size[(height)][(width-1)] += 1
+			grid_size[(height+1)][(width-1)] += 1
+			grid_size[(height+1)][(width)] += 1
+			grid_size[(height+1)][(width+1)] += 1
 
 
 
