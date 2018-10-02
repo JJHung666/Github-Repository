@@ -13,16 +13,18 @@ grid_size = [[0]*w for x in range(h)]
 for x in range(len(grid_size)):
 	b = r.randint(0,h-1)
 	c = r.randint(0,w-1)
-	grid_size[b][c] = "æ"
+	grid_size[b][c] = 9
 
 bomb_count = 0
 
 for x in range(h):
 	for y in range(w): #zhi explained what a nested for loop does to me
-		if grid_size[x-1][y-1] == "æ":
+		print(y,x,grid_size[x][y])
+		if grid_size[x][y] >= 9:
+			print("YES")
 			bomb_count += 1
 			height = x-1
-			width = y -1
+			width = y-1
 			grid_size[(height-1)][(width-1)] += 1
 			grid_size[(height-1)][(width)] += 1
 			grid_size[(height-1)][(width+1)] += 1
@@ -31,6 +33,8 @@ for x in range(h):
 			grid_size[(height+1)][(width-1)] += 1
 			grid_size[(height+1)][(width)] += 1
 			grid_size[(height+1)][(width+1)] += 1
+		#elif grid_size[x-1][y-1] >= 9:
+		#	grid_size[x-1][y-1] = 9
 
 
 
