@@ -81,7 +81,7 @@ dx = [0,0,1,-1]
 dy = [1,-1,0,0]
 
 def inbounds(x,y):
-	return x >= 1 and x <= w-1 and y >= 1 and y <= h-1
+	return x >= 1 and x <= w-2 and y >= 1 and y <= h-2
 
 def visit(x,y):
 	visited.append((x,y))
