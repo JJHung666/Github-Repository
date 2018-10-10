@@ -6,11 +6,31 @@
 import random as r 
 import sys
 
-w = int(input("input the width please ")) + 2
-h = int(input("input the height please ")) + 2
-bombs = int(input("input the amount of bombs please "))
-f = 0
-g = 0
+
+width = 0
+height = 0
+bombse = 0
+bombs = 0
+
+
+while True:
+	try:
+		width = int(input("input the width please "))
+		height = int(input("input the height please "))
+		bombse = int(input("input the amount of bombs please "))
+		if width < 0 and height < 0 and bombse < 0:
+			width = int(input("That ain't right. put a number for width "))
+			height = int(input("That ain't right. put a number for height "))
+			bombse = int(input("That ain't right. put a number for bombs "))
+		elif width >= 1 and height >= 0 and bombs >=0:
+			w = width + 2
+			h = height + 2
+			bombs = bombse
+			break
+	except ValueError:
+		print("Yeah, thats not right. Please input a number with your number keys")
+
+e = 0
 Q = 0
 z = 0
 
@@ -70,7 +90,7 @@ print("there are", bomb_count, "bombs")
 def reveal9(f,g): 
 	for x in range(-1,2):
 		for y in range(-1,2):
-			print((f+x, g+y))
+			#print((f+x, g+y))
 			second[f+x][g+y] = grid_size[f+x][g+y]
 
 
@@ -81,7 +101,7 @@ dx = [0,0,1,-1]
 dy = [1,-1,0,0]
 
 def inbounds(x,y):
-	return x >= 1 and x <= w-2 and y >= 1 and y <= h-2
+	return y >= 1 and y <= w-2 and x >= 1 and x <= h-2
 
 def visit(x,y):
 	visited.append((x,y))
@@ -90,31 +110,73 @@ def visit(x,y):
 			visit(x+dx[i],y+dy[i])
 		else:
 			reveal9(x,y)
+z = 1
+flagging = 0
+while z:
+	m = int(input("type 1, for marking, 2 for flagging, 3 for deflagging, and type 4 for the game to check if you won "))
+	if m == 1:
+		g = int(input("mark for row "))
+		f = int(input("mark for column "))
+		if f <= height and g <= width:
+			if grid_size[f][g] == "æ":
+				print("Game Over")
+				for x in range(1,len(grid_size)-1):
+					for y in range (1, len(grid_size[0])-1):
+						print(grid_size[x][y],end=" ")
+					print("")
+				break
+
+			elif grid_size[f][g] >= 1:
+				second[f][g] = grid_size[f][g]
+
+			elif grid_size[f][g] == 0:
+				second[f][g] = grid_size[f][g]
+				visit(f, g)
+		else:
+			print("please input the right number")
+
+			
+
+	elif m == 3:
+		k = int(input("flagging for row "))
+		j = int(input("flagging for column ")) 
+		if k <= height and j <= width:
+
+			if second[j][k] == "!":
+				second[j][k] = "•"
+			else:
+				pass
+				
 
 
-while 1:
-	g = int(input("check for row "))
-	f = int(input("check for column "))
-	#j = int(input("check for row flagging"))
-	#k = int(input("check for column flagging"))
-
-	if grid_size[f][g] == "æ":
-		print("Game Over")
-		for x in range(1,len(grid_size)-1):
-			for y in range (1, len(grid_size[0])-1):
-				print(grid_size[x][y],end=" ")
-			print("")
-		break
-
-	elif grid_size[f][g] >= 1:
-		second[f][g] = grid_size[f][g]
+	elif m == 2:
+		k = int(input("flagging for row "))
+		j = int(input("flagging for column ")) 
+		if k <= height and j <= width:
+			if grid_size[j][k] == "æ":
+				second[j][k] = "!"
+			elif grid_size[j][k] >= 0:
+				second[j][k] = "!"
 
 
-	elif grid_size[f][g] == 0:
-		second[f][g] = grid_size[f][g]
-		visit(f, g)
+		else:
+			print("please input the right number")		
+	
 
 	for x in range(1,len(second)-1):
 		for y in range (1, len(second[0])-1):
+			if m == 4:
+				if second[x][y] != "•":
+					e += 1
+				else:
+					e = e
+				if second[x][y] == "!":
+					flagging += 1
+				if flagging == bomb_count:
+					z = 0
 			print(second[x][y],end=" ")
 		print("")
+
+print("You win")
+
+
