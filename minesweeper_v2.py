@@ -81,7 +81,7 @@ for x in range(1,len(grid_size)-1):
 		if second[x][y] == grid_size[x][y]:
 			second[x][y] = "•"
 
-		print(grid_size[x][y],end=" ")
+		print(second[x][y],end=" ")
 	print("")
 print("there are", bomb_count, "bombs")
 # print(len(grid_size))
@@ -174,9 +174,6 @@ while z:
 					flagging += 1
 				if flagging == bomb_count:
 					z = 0
+					print("You win")
 			print(second[x][y],end=" ")
 		print("")
-
-print("You win")
-
-
