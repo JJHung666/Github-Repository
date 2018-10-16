@@ -8,7 +8,7 @@ import random
 
 img_sizex = 512
 img_sizey = 512
-a = 10
+a = limit+2
 limit = 8
 z = [i for i in range(1, limit+2, 2)]
 c = [h for h in range(0, limit+3, 2)]
