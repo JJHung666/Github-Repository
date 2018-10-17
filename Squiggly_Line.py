@@ -17,7 +17,7 @@ xpos = []
 for x in range(1, n-1):
 	f = random.randint(0, img_sizex)
 	for y in range(0, img_sizey):
-		xpos = [f for i in range(0,n)]
+		xpos = [f for i in range(1,n)]
 		r = random.randint(-1,1)
 		imag.putpixel((xpos[x]+r,y),(x+y, y*2, x*y))
 
