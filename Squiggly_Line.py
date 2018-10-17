@@ -14,7 +14,7 @@ f = 0
 xpos = []
 
 
-for x in range(n):
+for x in range(1, n-1):
 	f = random.randint(0, img_sizex)
 	for y in range(0, img_sizey):
 		xpos = [f for i in range(0,n)]
@@ -23,5 +23,3 @@ for x in range(n):
 
 
 imag.save("Squiggly.png", "PNG")
-
-
