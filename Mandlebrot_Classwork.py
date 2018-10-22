@@ -21,8 +21,8 @@ for y in range(img_sizey):
 	for x in range(img_sizex):
 		cx = xa + ((xb/(img_sizex//2))*x)
 		xc = x * (xb-xa)/(img_sizex-1) + xa
-		c = complex(xc, yc)
-		# c = complex(cx, cy)
+		# c = complex(xc, yc)
+		c = complex(cx, cy)
 		z = 0
 		for i in range(maxtries):
 			if abs(z) >= 2.0:
