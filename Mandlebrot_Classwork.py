@@ -17,9 +17,9 @@ image = i.new("RGB", (img_sizex, img_sizex))
 
 for y in range(img_sizey):
 	yc = y * (yb-ya)/(img_sizey-1) + ya
-	cy = -2 + ((2/(img_sizey//2))*y)
+	cy = ya + ((yb/(img_sizey//2))*y)
 	for x in range(img_sizex):
-		cx = -2 + ((2/(img_sizex//2))*x)
+		cx = xa + ((xb/(img_sizex//2))*x)
 		xc = x * (xb-xa)/(img_sizex-1) + xa
 		c = complex(xc, yc)
 		# c = complex(cx, cy)
