@@ -5,18 +5,18 @@
 
 from PIL import Image as i
 
-xa, xb = -2.0, 2.0
-ya, yb = -2.0, 2.0
+xa, xb = -1.0, 0.0
+ya, yb = -1.0, 0.0
 
-img_sizex = 512
-img_sizey = 512
+img_sizex = 1000
+img_sizey = 1000
 
 maxtries = 256 #because there are 255 color shades
 
 image = i.new("RGB", (img_sizex, img_sizex))
 
 for y in range(img_sizey):
-	yc = y * (yb-ya)/(img_sizey-1) +ya
+	yc = y * (yb-ya)/(img_sizey-1) + ya
 	cy = -2 + ((2/(img_sizey//2))*y)
 	for x in range(img_sizex):
 		cx = -2 + ((2/(img_sizex//2))*x)
@@ -29,9 +29,9 @@ for y in range(img_sizey):
 				break
 			z = z**2 + c
 
-		r = i
-		g = 0
-		b = 0
+		r = 256//i
+		g = i//255
+		b = i
 
 		image.putpixel((x,y),(r,g,b))
 
