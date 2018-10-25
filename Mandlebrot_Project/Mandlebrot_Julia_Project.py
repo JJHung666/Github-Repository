@@ -34,7 +34,7 @@ def mandlebrot_1():
 			g = 256-i
 			image.putpixel((x,y),(r, g, b))
 			if i < 100:
-				image.putpixel((x,y), (x,y,x-y))
+				image.putpixel((img_sizex-x,img_sizey-y), (x,y,x-y))
 	image.show("Mandlebrot_1", "PNG")
 	image.save("Mandlebrot_1.png", "PNG")
 
@@ -109,6 +109,6 @@ def julia():
 
 mandlebrot_1()
 
-mandlebrot_2()
+# mandlebrot_2()
 
-julia()
+# julia()
