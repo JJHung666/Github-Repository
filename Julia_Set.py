@@ -20,9 +20,9 @@ maxtries = 256
 image = i.new("RGB", (img_sizex, img_sizex))
 
 for y in range(img_sizey):
-	yz = y * (yb-ya)/(img_sizey-1) + ya
+	yz = yb + ((img_sizey/((yb-ya)/2))*y)
 	for x in range(img_sizex):
-		xz = x * (xb-xa)/(img_sizex-1) + xa
+		xz = xb + ((img_sizex/((xb-xa)/2))*x)
 		z = complex(xz, yz)
 		c = complex( -0.334,0.626)
 		for i in range(maxtries):

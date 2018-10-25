@@ -1,9 +1,6 @@
 # Name: Justin Lin
-# Date: 10/17/2018
-# Description: Mandlebrot
-# Source(s): 
-
-# from PIL import Image as i
+# Date: 10/24/2018
+# Source(s): None
 	
 def mandlebrot_1():
 	from PIL import Image as i
@@ -11,13 +8,9 @@ def mandlebrot_1():
 	ya, yb = -0.6723, -0.6402
 
 	img_sizex = 1000
-	img_sizey = 1000
-
-	counts = 10
-	pixeled = []
+	img_sizey = 1000 
 
 	maxtries = 256
-	a = 0
 	b = 0
 	c = 0
 
@@ -51,13 +44,9 @@ def mandlebrot_2():
 	ya, yb = 0.2396, 0.2415
 
 	img_sizex = 1000
-	img_sizey = 1000
-
-	counts = 10
-	pixeled = []
+	img_sizey = 1000 
 
 	maxtries = 256
-	a = 0
 	b = 0
 	c = 0
 
@@ -74,13 +63,11 @@ def mandlebrot_2():
 					break
 				z = z**2 + c
 
-			r = 256-i
-			b = i+256
-			if b >= 256:
-				b = b - i
+			r = i
+			b = 256-i
 			g = 256-i
 			image.putpixel((x,y),(r, g, b))
-			if i < 200:
+			if i < 150:
 				image.putpixel((x,y), (y,x,y-x))
 	image.show("Mandlebrot_2", "PNG")
 	image.save("Mandlebrot_2.png", "PNG")
@@ -94,9 +81,6 @@ def julia():
 
 	img_sizex = 1000
 	img_sizey = 1000
-
-
-	pixeled = []
 
 	maxtries = 256
 
