@@ -7,7 +7,7 @@ class Card():
 	def __init__(self, value, suit):
 		self.card = value
 		self.suit = suit
-	def c():
+	def __str__(self):
 		return "card number"+str(self.card)+"\nsuit"+str(self.suit)
 
 mydeck = []
@@ -17,9 +17,7 @@ for x in range(54):
 	if suit == 0:
 		suit = 4
 	mydeck[x] = Card(((x//4)+1), suit)
-	print(mydeck[x].c)
-
-# floor division + 1 = ceiling division
+	print(mydeck[x])
 
 # class deck():
 # 	def __init__(self):
