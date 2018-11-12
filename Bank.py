@@ -44,7 +44,15 @@ class Bank_Account():
 	def checkBalance():
 		return "Name:", +self.name+"\nBalance"+str(self.balance)
 
-	def deposit():
+	def deposit(self, amount, pin_s):
+		status = ""
+		if self.security_pin == pin_s
+			if amount <= 10000:
+				self.balance += amount
+				status = self.owner+"now has"+str(self.balance)
+			else: 
+				status = "depositing too much, please input an amount less than 10000"+str(self.balance)
+
 
 	def withdrawal():
 
