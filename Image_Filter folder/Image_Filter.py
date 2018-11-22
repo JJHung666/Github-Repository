@@ -15,7 +15,7 @@ fn = sys.argv[1]
 for x in range(len(fn)):
 	if fn[x] == '.':
 		if fn[x+1] == 'j' or fn[x+1] == 'p':
-			file_name = fn[:x] + 'filtered'
+			file_name = fn[:x] + ' filtered'
 # l.thumbnail(size_x_y)
 
 
