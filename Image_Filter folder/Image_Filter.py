@@ -22,12 +22,6 @@ for x in range(len(fn)):
 # # l.save('im/{}.png'.format(file_name, "png"))
 # l.save("Image.png", "png")
 
-# img_sizex = 700
-# img_sizey = 989
-# img_sizex = 678
-# img_sizey = 960
-# img_sizex = 2048
-# img_sizey = 1536
 
 H = i.open(sys.argv[1])
 img_sizex, img_sizey = H.size
