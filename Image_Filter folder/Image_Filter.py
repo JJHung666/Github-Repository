@@ -143,15 +143,15 @@ for x in range(img_sizex):
 		r,g,b = H.getpixel((x,y))
 		average_rgb = ((r+g+b)//3)
 		if average_rgb <= 51:
-			H.putpixel((x,y),(average_rgb,average_rgb,average_rgb))
+			H.putpixel((x,y),(r,g,b))
 		elif average_rgb > 51 and average_rgb <= 102 and recorded_color4[y][x] == ((0,0,0)):
-			H.putpixel((x,y),((average_rgb,average_rgb,average_rgb)))
+			H.putpixel((x,y),((r,g,b)))
 		elif average_rgb > 102 and average_rgb <= 153 and recorded_color3[y][x] == ((0,0,0)):
-			H.putpixel((x,y),((average_rgb,average_rgb,average_rgb)))
+			H.putpixel((x,y),((r,g,b)))
 		elif average_rgb > 153 and average_rgb <= 204 and recorded_color2[y][x] == ((0,0,0)):
-			H.putpixel((x,y),((average_rgb,average_rgb,average_rgb)))
+			H.putpixel((x,y),((r,g,b)))
 		elif average_rgb > 204 and average_rgb <= 255 and recorded_color1[y][x] == ((0,0,0)):
-			H.putpixel((x,y),((average_rgb,average_rgb,average_rgb)))
+			H.putpixel((x,y),((r,g,b)))
 		else:
 			H.putpixel((x,y),(255,255,255))
 	print(x)
