@@ -21,8 +21,8 @@ def Random_Dart_Throws(n):
 	a,b = (0, 0) #the middle of the dartboard
 	inc, outc = (0,0) # inc means the amount of times hit inside the dartboard circle, and outc means the amount of times hit outside the dartboard circle
 	for x in range(n):
-		a += r.uniform(-2,2) #the random positions of where it can be hit.
-		b += r.uniform(-2,2)
+		a += r.uniform(-1,1) #the random positions of where it can be hit.
+		b += r.uniform(-1,1)
 		if abs(a) <= 1 and abs(b) <= 1:  # this statement checks whether the random number is inside or outside of the dartboard circle
 			inc += 1
 		else:
@@ -34,6 +34,6 @@ a,b = Random_Dart_Throws(1000)
 c,d = Random_Dart_Throws(10000)
 e,f = Random_Dart_Throws(100000)
 
-print(a,b)
-print(c,d)
-print(e,f)
+print((a*4)/1000)
+print((c*4)/10000)
+print((e*4)/100000)
