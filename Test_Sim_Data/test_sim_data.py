@@ -103,43 +103,47 @@ def Assessment_scores(amount_of_test, subject, affinity):
 	return test_score
 
 
-def math(n):
+def math(n, affinity):
 	amount_of_test = n
-	math = Assessment_scores(amount_of_test, "math", "great")
-	r = [x for x in range(amount_of_test)]
+	math = Assessment_scores(amount_of_test, "math", affinity)
+	r = [x for x in range(1, 1+amount_of_test)]
 	mat.bar(r, math, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of math tests")
+	mat.savefig("math_test_bar_charts.png")
 	mat.show()
 
-def spanish(n):
+def spanish(n, affinity):
 	amount_of_test = n
-	spanish = Assessment_scores(amount_of_test, "spanish", "great")
-	r = [x for x in range(amount_of_test)]
+	spanish = Assessment_scores(amount_of_test, "spanish", affinity)
+	r = [x for x in range(1, 1+amount_of_test)]
 	mat.bar(r, spanish, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of spanish tests")
+	mat.savefig("spanish_test_bar_charts.png")
 	mat.show()
 
-def computer_science(n):
+def computer_science(n, affinity):
 	amount_of_test = n
-	computer_science = Assessment_scores(amount_of_test, "computer science", "normal")
-	r = [x for x in range(amount_of_test)]
+	computer_science = Assessment_scores(amount_of_test, "computer science", affinity)
+	r = [x for x in range(1, 1+amount_of_test)]
 	mat.bar(r, computer_science, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of computer science tests")
+	mat.savefig("cs_test_bar_charts.png")
 	mat.show()
 
-def english(n):
+def english(n, affinity):
 	amount_of_test = n
-	english = Assessment_scores(amount_of_test, "english", "normal")
-	r = [x for x in range(amount_of_test)]
+	english = Assessment_scores(amount_of_test, "english", affinity)
+	r = [x for x in range(1, 1+amount_of_test)]
 	mat.bar(r, english, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of english tests")
+	mat.savefig("english_test_bar_charts.png")
 	mat.show()
 
-math(9)
-english(4)
-computer_science(1)
-spanish(11)
+math(9, "great")
+english(4, "great")
+computer_science(1, "normal")
+spanish(11, "normal")
