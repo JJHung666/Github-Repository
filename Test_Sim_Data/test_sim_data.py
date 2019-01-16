@@ -18,6 +18,7 @@ import matplotlib.pyplot as mat
 
 def Assessment_scores(amount_of_test, subject, affinity):
 	test_score = []
+	average_grade = 0
 	if subject.lower() == "math":
 		for x in range(amount_of_test):
 			if affinity.lower() == "bad":
@@ -31,12 +32,13 @@ def Assessment_scores(amount_of_test, subject, affinity):
 			elif affinity.lower() == "great":
 				lowest_possible = 75
 				highest_possible = 102.5
-				duration_of_studying = r.uniform(1,2.5)
+				duration_of_studying = r.uniform(1,2)
 			grade = r.uniform(lowest_possible, highest_possible)
 			studying_multiplyer = (grade*(1+0.1)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5:
 				studying_multiplyer = 102.5
 			test_score.append(studying_multiplyer)
+			average_grade += studying_multiplyer
 
 
 	elif subject.lower() == "english":
@@ -52,12 +54,13 @@ def Assessment_scores(amount_of_test, subject, affinity):
 			elif affinity.lower() == "great":
 				lowest_possible = 75/2
 				highest_possible = 102.5/2
-				duration_of_studying = r.uniform(1,2.5)
+				duration_of_studying = r.uniform(1,2)
 			grade = r.uniform(lowest_possible, highest_possible)
 			studying_multiplyer = (grade*(1+0.075)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5/2:
 				studying_multiplyer = 102.5/2
 			test_score.append(studying_multiplyer)
+			average_grade += studying_multiplyer
 
 
 	elif subject.lower() == "computer science" or subject.lower() == "comp scie":
@@ -73,12 +76,13 @@ def Assessment_scores(amount_of_test, subject, affinity):
 			elif affinity.lower() == "great":
 				lowest_possible = 3.85
 				highest_possible = 5.1
-				duration_of_studying = r.uniform(1,2.5)
+				duration_of_studying = r.uniform(1,2)
 			grade = r.uniform(lowest_possible, highest_possible)
 			studying_multiplyer = (grade*(1+0.05)**(duration_of_studying))
 			if studying_multiplyer > 5.1:
 				studying_multiplyer = 5.1
 			test_score.append(studying_multiplyer)
+			average_grade += studying_multiplyer
 
 
 	elif subject.lower() == "language" or subject.lower() == "spanish":
@@ -94,54 +98,65 @@ def Assessment_scores(amount_of_test, subject, affinity):
 			elif affinity.lower() == "great":
 				lowest_possible = 75
 				highest_possible = 102.5
-				duration_of_studying = r.uniform(1,2.5)
+				duration_of_studying = r.uniform(1,2)
 			grade = r.uniform(lowest_possible, highest_possible)
 			studying_multiplyer = (grade*(1+0.1)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5:
 				studying_multiplyer = 100
 			test_score.append(studying_multiplyer)
+			average_grade += studying_multiplyer
+	average_grade = average_grade/amount_of_test
+	test_score.append(average_grade)
 	return test_score
 
 
 def math(n, affinity):
 	amount_of_test = n
 	math = Assessment_scores(amount_of_test, "math", affinity)
-	r = [x for x in range(1, 1+amount_of_test)]
+	r = [x for x in range(1, 2+amount_of_test)]
 	mat.bar(r, math, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of math tests")
 	mat.savefig("math_test_bar_charts.png")
 	mat.show()
+	average_grade = math[-1]
+	print("math average grade is "+str(average_grade))
 
 def spanish(n, affinity):
 	amount_of_test = n
 	spanish = Assessment_scores(amount_of_test, "spanish", affinity)
-	r = [x for x in range(1, 1+amount_of_test)]
+	r = [x for x in range(1, 2+amount_of_test)]
 	mat.bar(r, spanish, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of spanish tests")
 	mat.savefig("spanish_test_bar_charts.png")
 	mat.show()
+	average_grade = spanish[-1]
+	print("spanish average grade is "+str(average_grade))
 
 def computer_science(n, affinity):
 	amount_of_test = n
 	computer_science = Assessment_scores(amount_of_test, "computer science", affinity)
-	r = [x for x in range(1, 1+amount_of_test)]
+	r = [x for x in range(1, 2+amount_of_test)]
 	mat.bar(r, computer_science, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of computer science tests")
 	mat.savefig("cs_test_bar_charts.png")
 	mat.show()
+	average_grade = computer_science[-1]
+	print("computer_science average grade is "+str(average_grade))
 
 def english(n, affinity):
 	amount_of_test = n
 	english = Assessment_scores(amount_of_test, "english", affinity)
-	r = [x for x in range(1, 1+amount_of_test)]
+	r = [x for x in range(1, 2+amount_of_test)]
 	mat.bar(r, english, color=(.6,.2,.4,1.0))
 	mat.ylabel("Scores")
 	mat.xlabel("amount of english tests")
 	mat.savefig("english_test_bar_charts.png")
 	mat.show()
+	average_grade = english[-1]
+	print("english average grade is "+str(average_grade))
 
 math(1000, "great")
 english(1000, "great")
