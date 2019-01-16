@@ -32,10 +32,10 @@ def Assessment_scores(amount_of_test, subject, affinity):
 				lowest_possible = 75
 				highest_possible = 102.5
 				duration_of_studying = r.uniform(1,2.5)
-			grade = r.randrange(lowest_possible, highest_possible)
-			studying_multiplyer = grade*(1+0.1)**(duration_of_studying)
+			grade = r.uniform(lowest_possible, highest_possible)
+			studying_multiplyer = (grade*(1+0.1)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5:
-				studying_multiplyer == 102.5
+				studying_multiplyer = 102.5
 			test_score.append(studying_multiplyer)
 
 
@@ -53,10 +53,10 @@ def Assessment_scores(amount_of_test, subject, affinity):
 				lowest_possible = 75/2
 				highest_possible = 102.5/2
 				duration_of_studying = r.uniform(1,2.5)
-			grade = r.randrange(lowest_possible, highest_possible)
-			studying_multiplyer = grade*(1+0.075)**(duration_of_studying)
+			grade = r.uniform(lowest_possible, highest_possible)
+			studying_multiplyer = (grade*(1+0.075)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5/2:
-				studying_multiplyer == 102.5/2
+				studying_multiplyer = 102.5/2
 			test_score.append(studying_multiplyer)
 
 
@@ -74,11 +74,12 @@ def Assessment_scores(amount_of_test, subject, affinity):
 				lowest_possible = 3.85
 				highest_possible = 5.1
 				duration_of_studying = r.uniform(1,2.5)
-			grade = r.randrange(lowest_possible, highest_possible)
-			studying_multiplyer = grade*(1+0.05)**(duration_of_studying)
+			grade = r.uniform(lowest_possible, highest_possible)
+			studying_multiplyer = (grade*(1+0.05)**(duration_of_studying))//1
 			if studying_multiplyer > 5.1:
-				studying_multiplyer == 5.1
+				studying_multiplyer = 5.1
 			test_score.append(studying_multiplyer)
+
 
 	elif subject.lower() == "language" or subject.lower() == "spanish":
 		for x in range(amount_of_test):
@@ -94,19 +95,51 @@ def Assessment_scores(amount_of_test, subject, affinity):
 				lowest_possible = 75
 				highest_possible = 102.5
 				duration_of_studying = r.uniform(1,2.5)
-			grade = r.randrange(lowest_possible, highest_possible)
-			studying_multiplyer = grade*(1+0.1)**(duration_of_studying)
+			grade = r.uniform(lowest_possible, highest_possible)
+			studying_multiplyer = (grade*(1+0.1)**(duration_of_studying))//1
 			if studying_multiplyer > 102.5:
-				studying_multiplyer == 100
+				studying_multiplyer = 100
 			test_score.append(studying_multiplyer)
 	return test_score
 
-math = Assessment_scores(9, "math", "great")
-english = Assessment_scores(4, "english", "normal")
-computer_science = Assessment_scores(1, "computer science", "normal")
-spanish = Assessment_scores(11, "spanish", "great")
 
-print("math", math)
-print("english", english)
-print("computer science", computer_science)
-print("spanish", spanish)
+def math(n):
+	amount_of_test = n
+	math = Assessment_scores(amount_of_test, "math", "great")
+	r = [x for x in range(amount_of_test)]
+	mat.bar(r, math, color=(.6,.2,.4,1.0))
+	mat.ylabel("Scores")
+	mat.xlabel("amount of math tests")
+	mat.show()
+
+def spanish(n):
+	amount_of_test = n
+	spanish = Assessment_scores(amount_of_test, "spanish", "great")
+	r = [x for x in range(amount_of_test)]
+	mat.bar(r, spanish, color=(.6,.2,.4,1.0))
+	mat.ylabel("Scores")
+	mat.xlabel("amount of spanish tests")
+	mat.show()
+
+def computer_science(n):
+	amount_of_test = n
+	computer_science = Assessment_scores(amount_of_test, "computer science", "normal")
+	r = [x for x in range(amount_of_test)]
+	mat.bar(r, computer_science, color=(.6,.2,.4,1.0))
+	mat.ylabel("Scores")
+	mat.xlabel("amount of computer science tests")
+	mat.show()
+
+def english(n):
+	amount_of_test = n
+	english = Assessment_scores(amount_of_test, "english", "normal")
+	r = [x for x in range(amount_of_test)]
+	mat.bar(r, english, color=(.6,.2,.4,1.0))
+	mat.ylabel("Scores")
+	mat.xlabel("amount of english tests")
+	mat.show()
+
+math(9)
+english(4)
+computer_science(1)
+spanish(11)
