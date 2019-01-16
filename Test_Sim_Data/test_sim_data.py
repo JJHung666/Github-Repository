@@ -1,7 +1,7 @@
 # Name: Justin Lin -- Title of simulation: Simulation and Data Sets
 # Date: 1/13/2019
 # Description:
-# Source: none
+# Source: https://stackoverflow.com/questions/9622163/save-plot-to-image-file-instead-of-displaying-it-using-matplotlib
 
 
 #Option #1:
@@ -75,7 +75,7 @@ def Assessment_scores(amount_of_test, subject, affinity):
 				highest_possible = 5.1
 				duration_of_studying = r.uniform(1,2.5)
 			grade = r.uniform(lowest_possible, highest_possible)
-			studying_multiplyer = (grade*(1+0.05)**(duration_of_studying))//1
+			studying_multiplyer = (grade*(1+0.05)**(duration_of_studying))
 			if studying_multiplyer > 5.1:
 				studying_multiplyer = 5.1
 			test_score.append(studying_multiplyer)
@@ -143,7 +143,7 @@ def english(n, affinity):
 	mat.savefig("english_test_bar_charts.png")
 	mat.show()
 
-math(9, "great")
-english(4, "great")
-computer_science(1, "normal")
-spanish(11, "normal")
+math(1000, "great")
+english(1000, "great")
+computer_science(1000, "normal")
+spanish(1000, "normal")
