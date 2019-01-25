@@ -1,11 +1,11 @@
 # Sympy_Test
 
 from sympy import *
-from sympy.geometry import *
+a = Symbol('a')
+b = Symbol('b')
+c = Symbol('c')
+e = (a*b + 2*a*b)**(c**2)
+print(e)
 
-x = Point(0,0)
-y = Point(1,1)
-z = Point(4,4)
-w = Point(-1, 2)
-print(Point.is_collinear(x,y,z))
-print(Point.is_collinear(x,y,w))
+x,y,z = symbols('x,y,z')
+print(x,y,z)
