@@ -1,11 +1,11 @@
-# Sympy_Test
-
+# pprint
+import math as m
 from sympy import *
-a = Symbol('a')
-b = Symbol('b')
-c = Symbol('c')
-e = (a*b + 2*a*b)**(c**2)
-print(e)
+# the numbers are printed differently
+def sympy_printing_vs_normal_print():
+    pprint(sqrt(8))
+    print(sqrt(8))
+    print(m.sqrt(8)) 
 
-x,y,z = symbols('x,y,z')
-print(x,y,z)
+sympy_printing_vs_normal_print()
+# this example is a function that shows the difference in symbolic and non symbolic math. It also shows the difference in printing.
