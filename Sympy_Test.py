@@ -1,8 +1,8 @@
 from sympy import *
-from sympy.geometry import *
-x = Point(0,0) 
-y = Point(1,1) 
-z = Point(3,0) 
-w = Point(0, 0.5)
-t = Polygon(w,x,y,z)
-print(Polygon(w,x,y,z).area)
+def sympy_symbols():
+    a = Symbol('a')
+    b = Symbol('b')
+    c = Symbol('c')
+    e = (a*b + 2*a*b)**(c**2)
+    pprint(e)
+sympy_symbols()
